@@ -1,0 +1,538 @@
+monster_name,monster_special_ability_id
+Aboleth,1
+Aboleth,2
+Aboleth,3
+Acolyte,4
+Adult Black Dragon,5
+Adult Black Dragon,6
+Adult Blue Dracolich,7
+Adult Blue Dracolich,8
+Adult Blue Dragon,9
+Adult Brass Dragon,10
+Adult Bronze Dragon,11
+Adult Bronze Dragon,12
+Adult Copper Dragon,13
+Adult Gold Dragon,14
+Adult Gold Dragon,15
+Adult Green Dragon,16
+Adult Green Dragon,17
+Adult Red Dragon,18
+Adult Silver Dragon,19
+Adult White Dragon,20
+Adult White Dragon,21
+Air Elemental,22
+Ancient Black Dragon,23
+Ancient Black Dragon,24
+Ancient Black Dragon,25
+Ancient Brass Dragon,26
+Ancient Bronze Dragon,27
+Ancient Bronze Dragon,28
+Ancient Copper Dragon,29
+Ancient Gold Dragon,30
+Ancient Gold Dragon,31
+Ancient Green Dragon,32
+Ancient Green Dragon,33
+Ancient Red Dragon,34
+Ancient Silver Dragon,35
+Ancient White Dragon,36
+Ancient White Dragon,37
+Androsphinx,38
+Androsphinx,39
+Androsphinx,40
+Animated Armor,41
+Animated Armor,42
+Archmage,43
+Archmage,44
+Assassin,45
+Assassin,46
+Assassin,47
+Awakened Shrub,48
+Awakened Tree,49
+Azer,50
+Azer,51
+Azer,52
+Baboon,53
+Badger,54
+Balor,55
+Balor,56
+Balor,57
+Balor,58
+Barbed Devil,59
+Barbed Devil,60
+Barbed Devil,61
+Basilisk,62
+Bat,63
+Bat,64
+Bearded Devil,65
+Bearded Devil,66
+Bearded Devil,67
+Berserker,68
+Black Bear,69
+Black Dragon Wyrmling,70
+Black Pudding,71
+Black Pudding,72
+Black Pudding,73
+Blink Dog,74
+Blood Hawk,75
+Blood Hawk,76
+Boar,77
+Boar,78
+Bone Devil,79
+Bone Devil,80
+Bronze Dragon Wyrmling,81
+Brown Bear,82
+Bugbear,83
+Bugbear,84
+Bulette,85
+Carrion Crawler,86
+Carrion Crawler,87
+Cat,88
+Cave Bear,89
+Centaur,90
+Chain Devil,91
+Chain Devil,92
+Chuul,93
+Chuul,94
+Clay Golem,95
+Clay Golem,96
+Clay Golem,97
+Clay Golem,98
+Clay Golem,99
+Cloaker,100
+Cloaker,101
+Cloaker,102
+Cloud Giant,103
+Cloud Giant,104
+Couatl,105
+Couatl,106
+Couatl,107
+Crab,108
+Crocodile,109
+Cult Fanatic,110
+Cult Fanatic,111
+Cultist,112
+Darkmantle,113
+Darkmantle,114
+Death Dog,115
+Deep Gnome (Svirfneblin),116
+Deep Gnome (Svirfneblin),117
+Deep Gnome (Svirfneblin),118
+Deva,119
+Deva,120
+Deva,121
+Dire Wolf,122
+Dire Wolf,123
+Djinni,124
+Djinni,125
+Djinni,126
+Doppelganger,127
+Doppelganger,128
+Doppelganger,129
+Dragon Turtle,130
+Drider,131
+Drider,132
+Drider,133
+Drider,134
+Drider,135
+Drow,136
+Drow,137
+Drow,138
+Druid,139
+Dryad,140
+Dryad,141
+Dryad,142
+Dryad,143
+Duergar,144
+Duergar,145
+Dust Mephit,146
+Dust Mephit,147
+Eagle,148
+Earth Elemental,149
+Earth Elemental,150
+Efreeti,151
+Efreeti,152
+Efreeti,153
+Elephant,154
+Elk,155
+Erinyes,156
+Erinyes,157
+Ettercap,158
+Ettercap,159
+Ettercap,160
+Ettin,161
+Ettin,162
+Fire Elemental,163
+Fire Elemental,164
+Fire Elemental,165
+Flesh Golem,166
+Flesh Golem,167
+Flesh Golem,168
+Flesh Golem,169
+Flesh Golem,170
+Flesh Golem,171
+Flying Snake,172
+Flying Sword,173
+Flying Sword,174
+Frog,175
+Frog,176
+Gargoyle,177
+Gelatinous Cube,178
+Gelatinous Cube,179
+Ghast,180
+Ghast,181
+Ghost,182
+Ghost,183
+Giant Badger,184
+Giant Bat,185
+Giant Bat,186
+Giant Boar,187
+Giant Boar,188
+Giant Crab,189
+Giant Crocodile,190
+Giant Eagle,191
+Giant Elk,192
+Giant Fire Beetle,193
+Giant Frog,194
+Giant Frog,195
+Giant Goat,196
+Giant Goat,197
+Giant Hyena,198
+Giant Lizard,199
+Giant Lizard,200
+Giant Octopus,201
+Giant Octopus,202
+Giant Octopus,203
+Giant Owl,204
+Giant Owl,205
+Giant Rat,206
+Giant Rat,207
+Giant Sea Horse,208
+Giant Sea Horse,209
+Giant Shark,210
+Giant Shark,211
+Giant Spider,212
+Giant Spider,213
+Giant Spider,214
+Giant Toad,215
+Giant Toad,216
+Giant Vulture,217
+Giant Vulture,218
+Giant Weasel,219
+Giant Wolf Spider,220
+Giant Wolf Spider,221
+Giant Wolf Spider,222
+Gibbering Mouther,223
+Gibbering Mouther,224
+Glabrezu,225
+Glabrezu,226
+Gladiator,227
+Gladiator,228
+Gnoll,229
+Goat,230
+Goat,231
+Goblin,232
+Gold Dragon Wyrmling,233
+Gorgon,234
+Gray Ooze,235
+Gray Ooze,236
+Gray Ooze,237
+Green Dragon Wyrmling,238
+Green Hag,239
+Green Hag,240
+Green Hag,241
+Green Hag,242
+Green Hag,243
+Green Hag,244
+Grick,245
+Griffon,246
+Grimlock,247
+Grimlock,248
+Grimlock,249
+Guardian Naga,250
+Guardian Naga,251
+Gynosphinx,252
+Gynosphinx,253
+Gynosphinx,254
+Hawk,255
+Hell Hound,256
+Hell Hound,257
+Hezrou,258
+Hezrou,259
+Hippogriff,260
+Hobgoblin,261
+Homunculus,262
+Horned Devil,263
+Horned Devil,264
+Hunter Shark,265
+Hunter Shark,266
+Hydra,267
+Hydra,268
+Hydra,269
+Hydra,270
+Hyena,271
+Ice Devil,272
+Ice Devil,273
+Ice Mephit,274
+Ice Mephit,275
+Ice Mephit,276
+Imp,277
+Imp,278
+Imp,279
+Imp,280
+Invisible Stalker,281
+Invisible Stalker,282
+Iron Golem,283
+Iron Golem,284
+Iron Golem,285
+Iron Golem,286
+Jackal,287
+Jackal,288
+Killer Whale,289
+Killer Whale,290
+Killer Whale,291
+Knight,292
+Kobold,293
+Kobold,294
+Kraken,295
+Kraken,296
+Kraken,297
+Lamia,298
+Lemure,299
+Lemure,300
+Lich,301
+Lich,302
+Lich,303
+Lich,304
+Lion,305
+Lion,306
+Lion,307
+Lion,308
+Lizardfolk,309
+Mage,310
+Magma Mephit,311
+Magma Mephit,312
+Magma Mephit,313
+Magmin,314
+Magmin,315
+Mammoth,316
+Manticore,317
+Marilith,318
+Marilith,319
+Marilith,320
+Mastiff,321
+Medusa,322
+Merfolk,323
+Merrow,324
+Mimic,325
+Mimic,326
+Mimic,327
+Mimic,328
+Minotaur,329
+Minotaur,330
+Minotaur,331
+Minotaur Skeleton,332
+Mule,333
+Mule,334
+Mummy Lord,335
+Mummy Lord,336
+Mummy Lord,337
+Nalfeshnee,338
+Night Hag,339
+Night Hag,340
+Night Hag,341
+Night Hag,342
+Night Hag,343
+Night Hag,344
+Nightmare,345
+Nightmare,346
+Ochre Jelly,347
+Ochre Jelly,348
+Octopus,349
+Octopus,350
+Octopus,351
+Ogre Zombie,352
+Oni,353
+Oni,354
+Oni,355
+Orc,356
+Otyugh,357
+Owl,358
+Owl,359
+Owlbear,360
+Panther,361
+Panther,362
+Phase Spider,363
+Phase Spider,364
+Phase Spider,365
+Pit Fiend,366
+Pit Fiend,367
+Pit Fiend,368
+Pit Fiend,369
+Planetar,370
+Planetar,371
+Planetar,372
+Planetar,373
+Plesiosaurus,374
+Polar Bear,375
+Priest,376
+Priest,377
+Pseudodragon,378
+Pseudodragon,379
+Pseudodragon,380
+Pseudodragon,381
+Purple Worm,382
+Quasit,383
+Quasit,384
+Quasit,385
+Quipper,386
+Quipper,387
+Rakshasa,388
+Rakshasa,389
+Rat,390
+Raven,391
+Reef Shark,392
+Reef Shark,393
+Remorhaz,394
+Rhinoceros,395
+Roc,396
+Roper,397
+Roper,398
+Roper,399
+Rug of Smothering,400
+Rug of Smothering,401
+Rug of Smothering,402
+Rust Monster,403
+Rust Monster,404
+Saber-Toothed Tiger,405
+Saber-Toothed Tiger,406
+Sahuagin,407
+Sahuagin,408
+Sahuagin,409
+Salamander,410
+Salamander,411
+Satyr,412
+Scout,413
+Sea Hag,414
+Sea Hag,415
+Sea Hag,416
+Sea Hag,417
+Sea Hag,418
+Sea Horse,419
+Shadow,420
+Shadow,421
+Shadow,422
+Shambling Mound,423
+Shield Guardian,424
+Shield Guardian,425
+Shield Guardian,426
+Shrieker,427
+Solar,428
+Solar,429
+Solar,430
+Solar,431
+Specter,432
+Specter,433
+Spider,434
+Spider,435
+Spider,436
+Spirit Naga,437
+Spirit Naga,438
+Spy,439
+Spy,440
+Steam Mephit,441
+Steam Mephit,442
+Stone Giant,443
+Stone Golem,444
+Stone Golem,445
+Stone Golem,446
+Storm Giant,447
+Storm Giant,448
+Succubus/Incubus,449
+Succubus/Incubus,450
+Swarm of Bats,451
+Swarm of Bats,452
+Swarm of Bats,453
+Swarm of Beetles,454
+Swarm of Centipedes,455
+Swarm of Insects,456
+Swarm of Poisonous Snakes,457
+Swarm of Quippers,458
+Swarm of Quippers,459
+Swarm of Quippers,460
+Swarm of Rats,461
+Swarm of Rats,462
+Swarm of Ravens,463
+Swarm of Spiders,464
+Swarm of Spiders,465
+Swarm of Spiders,466
+Swarm of Spiders,467
+Swarm of Wasps,468
+Tarrasque,469
+Tarrasque,470
+Tarrasque,471
+Tarrasque,472
+Thug,473
+Tiger,474
+Tiger,475
+Treant,476
+Treant,477
+Tribal Warrior,478
+Triceratops,479
+Troll,480
+Troll,481
+Troll,482
+Unicorn,483
+Unicorn,484
+Unicorn,485
+Unicorn,486
+Vampire,487
+Vampire,488
+Vampire,489
+Vampire,490
+Vampire,491
+Vampire,492
+Vampire Spawn,493
+Vampire Spawn,494
+Vampire Spawn,495
+Violet Fungus,496
+Vrock,497
+Vulture,498
+Vulture,499
+Warhorse,500
+Water Elemental,501
+Water Elemental,502
+Weasel,503
+Werebear,504
+Werebear,505
+Wereboar,506
+Wereboar,507
+Wereboar,508
+Wererat,509
+Wererat,510
+Weretiger,511
+Weretiger,512
+Weretiger,513
+Werewolf,514
+Werewolf,515
+Wight,516
+Will-o'-Wisp,517
+Will-o'-Wisp,518
+Will-o'-Wisp,519
+Will-o'-Wisp,520
+Winter Wolf,521
+Winter Wolf,522
+Winter Wolf,523
+Wolf,524
+Wolf,525
+Worg,526
+Wraith,527
+Wraith,528
+Xorn,529
+Xorn,530
+Xorn,531
+Young Black Dragon,532
+Young Bronze Dragon,533
+Young Gold Dragon,534
+Young Green Dragon,535
+Young White Dragon,536
+Zombie,537

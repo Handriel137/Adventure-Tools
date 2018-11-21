@@ -1,0 +1,23 @@
+# In Search of Adventure #
+
+A small part of the massive set of modules B1-B9 from TSR from 1987.
+
+[CR: 1]
+
+# Threshold #
+
+Threshold is a logging community of about 5000, ably ruled by Sherlane Halaran, baron and Patriarch of the Church. In Threshold, the merchant, *Clifton Caldwell* has purchased the Old Antilles Castle, five miles west of Threshold. He has posted advertisements in local taverns for “Qualified Eviction Personnel”.
+
+# Hamlet #
+
+A small hamlet only a day's ride to the east was overrun by *hobgoblins* several days ago. Everyone was killed. The party learns of this on their way to Caldwell's Castle.
+
+# Caldwell’s Castle #
+
+A *dungeon clearing* adventure. The adventure begins with the party standing outside the double doors leading into the castle. The doors are unlocked, and swing open easily. The part must find and eliminate all monsters including two insane *magic users*.
+
+## Dictionary ##
+
+{"name":"Clifton Caldwell", "type": "NPC", "level": 10}
+{"name":"Hobgoblin","type": "monster", "CR": 5}
+{"name":"Archmage", "type":"monster", "race": "human", "ability":["spell-casters"], "CR":1} 

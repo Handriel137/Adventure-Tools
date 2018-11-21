@@ -1,0 +1,12 @@
+<h1>In Search of Adventure</h1>
+<p>A small part of the massive set of modules B1-B9 from TSR from 1987.  This is an adventure designed for <strong>7th</strong> level adventurers and will take them to 10th level after the adventure is completed.  They'll confront the great king and his army of undead that now ravage the land.  With some swift wit and even more luck the party may be able to overcome the odds and bring peace to the land once again.</p>
+<h3>Threshold</h3>
+<p>Threshold is a logging community of about 5000, ably ruled by Sherlane Halaran, baron and Patriarch of the Church. In Threshold, the merchant, <strong>Clifton Caldwell</strong> has purchased the Old Antilles Castle, five miles west of Threshold. He has posted advertisements in local taverns for “Qualified Eviction Personnel”.</p>
+<h3>Hamlet</h3>
+<p>A small hamlet only a day's ride to the east was overrun by <strong>hobgoblins</strong> several days ago. Everyone was killed. The party learns of this on their way to Caldwell's Castle.  There is also a <strong>Adult Red Dragon</strong> that lairs there.</p>
+<h3>Caldwell’s Castle</h3>
+<p>A <strong>dungeon clearing</strong> adventure. The adventure begins with the party standing outside the double doors leading into the castle. The doors are unlocked, and swing open easily. The part must find and eliminate all monsters including two insane <strong>spellcaster</strong>.</p>
+<p>== Dictionary ==</p>
+<p>{"name":"Clifton Caldwell", "type": "NPC", "level": 10}
+{"name":"Hobgoblin","type": "monster", "CR": 5}
+{"name":"Archmage", "type":"monster", "race": "human", "ability": "spellcasting" , "action":"Breath Weapon", "CR":-2}</p>

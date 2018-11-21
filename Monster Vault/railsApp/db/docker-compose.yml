@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  app:
+    build: ./app
+    command: rails server -p 3000 -b '0.0.0.0'
+    volumes:
+      - ./app:/app/
+    ports:
+      - "3000:3000"
+    environment:
+      - RYAN_IS_COOL=TRUE
+    links:
+      - postgres
+
+  postgres:
+    image: postgres:10.4
+    ports:
+      - 5432:5432
+    volumes:
+      - ./DB/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/
+      - ./DB/sampledata/:/sampledata/

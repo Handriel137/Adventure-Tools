@@ -1,0 +1,3 @@
+{"name":"Clifton Caldwell", "type": "NPC", "level": 10}
+{"name":"hobgoblins", "type": "monster", "CR": -1}
+{"name":"magic users", "type":"monster", "race": "human", "ability":["spell-casters"], "CR":1} 

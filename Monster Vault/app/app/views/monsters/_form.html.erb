@@ -1,0 +1,257 @@
+<%= form_with(model: monster, local: true) do |form| %>
+  <% if monster.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(monster.errors.count, "error") %> prohibited this monster from being saved:</h2>
+
+      <ul>
+      <% monster.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.text_area :size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :race %>
+    <%= form.text_area :race %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subtype %>
+    <%= form.text_area :subtype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alignment %>
+    <%= form.text_area :alignment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :armor_class %>
+    <%= form.text_area :armor_class %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hit_points %>
+    <%= form.text_area :hit_points %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hit_dice %>
+    <%= form.text_area :hit_dice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :speed %>
+    <%= form.text_area :speed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :strength %>
+    <%= form.text_area :strength %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dexterity %>
+    <%= form.text_area :dexterity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :constitution %>
+    <%= form.text_area :constitution %>
+  </div>
+
+  <div class="field">
+    <%= form.label :intelligence %>
+    <%= form.text_area :intelligence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wisdom %>
+    <%= form.text_area :wisdom %>
+  </div>
+
+  <div class="field">
+    <%= form.label :charisma %>
+    <%= form.text_area :charisma %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wisdom_save %>
+    <%= form.text_area :wisdom_save %>
+  </div>
+
+  <div class="field">
+    <%= form.label :damage_vulnerabilities %>
+    <%= form.text_area :damage_vulnerabilities %>
+  </div>
+
+  <div class="field">
+    <%= form.label :damage_resistances %>
+    <%= form.text_area :damage_resistances %>
+  </div>
+
+  <div class="field">
+    <%= form.label :damage_immunities %>
+    <%= form.text_area :damage_immunities %>
+  </div>
+
+  <div class="field">
+    <%= form.label :condition_immunities %>
+    <%= form.text_area :condition_immunities %>
+  </div>
+
+  <div class="field">
+    <%= form.label :senses %>
+    <%= form.text_area :senses %>
+  </div>
+
+  <div class="field">
+    <%= form.label :languages %>
+    <%= form.text_area :languages %>
+  </div>
+
+  <div class="field">
+    <%= form.label :challenge_rating %>
+    <%= form.text_area :challenge_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :special_abilities %>
+    <%= form.text_area :special_abilities %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actions %>
+    <%= form.text_area :actions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :constitution_save %>
+    <%= form.text_area :constitution_save %>
+  </div>
+
+  <div class="field">
+    <%= form.label :perception %>
+    <%= form.text_area :perception %>
+  </div>
+
+  <div class="field">
+    <%= form.label :history %>
+    <%= form.text_area :history %>
+  </div>
+
+  <div class="field">
+    <%= form.label :legendary_actions %>
+    <%= form.text_area :legendary_actions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :intelligence_save %>
+    <%= form.text_area :intelligence_save %>
+  </div>
+
+  <div class="field">
+    <%= form.label :religion %>
+    <%= form.text_area :religion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :medicine %>
+    <%= form.text_area :medicine %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stealth %>
+    <%= form.text_area :stealth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dexterity_save %>
+    <%= form.text_area :dexterity_save %>
+  </div>
+
+  <div class="field">
+    <%= form.label :charisma_save %>
+    <%= form.text_area :charisma_save %>
+  </div>
+
+  <div class="field">
+    <%= form.label :persuasion %>
+    <%= form.text_area :persuasion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :insight %>
+    <%= form.text_area :insight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deception %>
+    <%= form.text_area :deception %>
+  </div>
+
+  <div class="field">
+    <%= form.label :athletics %>
+    <%= form.text_area :athletics %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arcana %>
+    <%= form.text_area :arcana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nature %>
+    <%= form.text_area :nature %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acrobatics %>
+    <%= form.text_area :acrobatics %>
+  </div>
+
+  <div class="field">
+    <%= form.label :strength_save %>
+    <%= form.text_area :strength_save %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reactions %>
+    <%= form.text_area :reactions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :survival %>
+    <%= form.text_area :survival %>
+  </div>
+
+  <div class="field">
+    <%= form.label :investigation %>
+    <%= form.text_area :investigation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :intimidation %>
+    <%= form.text_area :intimidation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :performance %>
+    <%= form.text_area :performance %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
