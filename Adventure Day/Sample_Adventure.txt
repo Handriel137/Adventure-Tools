@@ -2,23 +2,21 @@
 
 A small part of the massive set of modules B1-B9 from TSR from 1987.  This is an adventure designed for **7th** level adventurers and will take them to 10th level after the adventure is completed.  They'll confront the great king and his army of undead that now ravage the land.  With some swift wit and even more luck the party may be able to overcome the odds and bring peace to the land once again.
 
-
 ### Threshold
 
-Threshold is a logging community of about 5000, ably ruled by Sherlane Halaran, baron and Patriarch of the Church. In Threshold, the merchant, **Clifton Caldwell** has purchased the Old Antilles Castle, five miles west of Threshold. He has posted advertisements in local taverns for ìQualified Eviction Personnelî.
+Threshold is a logging community of about 5000, ably ruled by Sherlane Halaran, baron and Patriarch of the Church. In Threshold, the merchant, **Clifton Caldwell** has purchased the Old Antilles Castle, five miles west of Threshold. He has posted advertisements in local taverns for ‚ÄúQualified Eviction Personnel‚Äù.
 
 ### Hamlet
 
-A small hamlet only a day's ride to the east was overrun by **Hobgoblins** several days ago. Everyone was killed. The party learns of this on their way to Caldwell's Castle.  There is also a **Adult Red Dragon** that lairs there.
+A small hamlet only a day's ride to the east was overrun by a **Hobgoblin** and his band of mercenaries several days ago. Everyone was killed. The party learns of this on their way to Caldwell's Castle.  There is also a **Adult Red Dragon** that lairs there that may reward the Adventurers for removing a thorn it its side.
 
+### Caldwell‚Äôs Castle 
 
-### Caldwellís Castle 
-
-A **dungeon clearing** adventure. The adventure begins with the party standing outside the double doors leading into the castle. The doors are unlocked, and swing open easily. The part must find and eliminate all monsters including two insane mages with **spellcasting**.
+A **dungeon** clearing adventure. The adventure begins with the party standing outside the double doors leading into the castle. The doors are unlocked, and swing open easily. The part must find and eliminate all monsters including two insane mages with **spellcasting**.
 
 == Dictionary ==
 
-{"name":"Clifton Caldwell", "type": "NPC", "level": 10}
+{"name":"Clifton Caldwell", "type": "NPC", "level": 10, "description": "Clifton is a merchant"}
 {"name":"Hobgoblin","type": "monster", "CR": 5}
 {"name":"Archmage", "type":"monster", "race": "human", "ability": "spellcasting" , "CR": -2}
-{"name":"Evil Spelluser", "ability": "spellcasting" , "CR": -2}  
+{"name":"Evil Spelluser", "ability": "spellcasting" , "CR": -2} 
