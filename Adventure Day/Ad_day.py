@@ -11,7 +11,7 @@ import string
 
 
 # REGEX
-re_title = re.compile("^#{1,3}([\\w\\s']+)\\n")
+re_title = re.compile("#{1,3}[^\\n]+")
 re_tags = re.compile("\\*{2}([\\w\\s]+)\\*{2}")
 re_sceneOutline = re.compile("\\n+([^=#]+)")
 dictionary = re.compile("==\n+([\\w\\W\\s]+) \\Z")
@@ -366,6 +366,15 @@ def getLevel(highlight):
             adventure_level = adventure_level[0]
             print(adventure_level)
 
+def getTitle(lines):
+    headings = []
+    for line in lines:
+        # print(line)
+        if re.findall(re_title,line):
+            headings.extend(re.findall(re_title,line))
+    # print(headings)
+    return headings
+
 def encounterQuery(CR, location):
     conn = None
     try:
@@ -419,7 +428,7 @@ def encounterQuery(CR, location):
 def buildEasyEncounter(level, players, location):
     
     if(type(level) is not int):
-        print("changing to integer")
+        
         level = int(level)
 
     easy_xp = [0,25,50,75,125,250,300,350,450,550,600,800,1000,1100,1250,1400,1600,2000,2100,2400,2800]
@@ -434,7 +443,6 @@ def buildEasyEncounter(level, players, location):
     medium_xp_allotment = players * medium_xp[level]
     hard_xp_allotment = players * hard_xp[level]
     deadly_xp_allotment = players * deadly_xp[level]    
-    print(easy_xp_allotment)
     easy_monsters = encounterQuery(level, location)
 
     # building an encounter
@@ -486,7 +494,7 @@ def buildEasyEncounter(level, players, location):
 def buildMediumEncounter(level, players, location):
     
     if(type(level) is not int):
-        print("changing to integer")
+        
         level = int(level)
 
     easy_xp = [0,25,50,75,125,250,300,350,450,550,600,800,1000,1100,1250,1400,1600,2000,2100,2400,2800]
@@ -501,7 +509,7 @@ def buildMediumEncounter(level, players, location):
     medium_xp_allotment = players * medium_xp[level]
     hard_xp_allotment = players * hard_xp[level]
     deadly_xp_allotment = players * deadly_xp[level]    
-    print(easy_xp_allotment)
+    
     easy_monsters = encounterQuery(level, location)
 
     # building an encounter
@@ -556,7 +564,7 @@ def buildMediumEncounter(level, players, location):
 def buildHardEncounter(level, players, location):
     
     if(type(level) is not int):
-        print("changing to integer")
+        
         level = int(level)
 
     easy_xp = [0,25,50,75,125,250,300,350,450,550,600,800,1000,1100,1250,1400,1600,2000,2100,2400,2800]
@@ -571,7 +579,7 @@ def buildHardEncounter(level, players, location):
     medium_xp_allotment = players * medium_xp[level]
     hard_xp_allotment = players * hard_xp[level]
     deadly_xp_allotment = players * deadly_xp[level]    
-    print(easy_xp_allotment)
+    
     easy_monsters = encounterQuery(level, location)
 
     # building an encounter
@@ -590,12 +598,10 @@ def buildHardEncounter(level, players, location):
         encounter_monster = random.choice(list(easy_encounter_monsters))
         xp = encounter_monster['experience']
         
-        print(len(encounter_roster))
-
         while(len(encounter_roster) is 0 and encounter_monster['challenge_rating'] < level / 2):
             encounter_monster = random.choice(list(easy_encounter_monsters))
             xp = encounter_monster['experience']
-            print("changed monster")
+            
         
         #monster xp is 80% of allotment and xp left in allotment
         if(xp <= (deadly_xp_allotment*.8) and xp <= deadly_xp_allotment - encounter_xp):
@@ -707,7 +713,7 @@ def buildDeadlyEncounter(level, players, location):
 
 # TODO create template for monster in markdown
 def monsterMarkdown(monster):
-    t = f'''___
+    t = f'''\n___
 >## {monster['name']}
 >*{monster['type']}, {monster['alignment']}*
 > ___
@@ -762,7 +768,7 @@ def monsterMarkdown(monster):
             action_string = action_string + f'''> **{action['name']}**: \n>{action['description']}\n>\n''' 
         t+= action_string
     if(len(actions)+len(abilities) >=4):
-        t = "___\n" + t
+        t = "\page\n___\n" + t + "\page\n"
 
     # print(t)
     return t
@@ -775,9 +781,46 @@ _{npc['description']}_
 - **appearance**: {npc['appearance']}
 - **personality**: {npc['personality']}
 - **quirks**: {npc['quirks']}
-</div>'''
+</div>\n'''
 
     return text
+
+def sceneMarkdown(scene):
+    scene = f"{scene}"
+
+    return scene
+
+def monsterCounter(monsterList):
+    m_names = []
+    m_string = ""
+
+    for monster in monsterList:
+        # print(monster['name'])
+        m_names.append(monster['name'])
+    
+    e_set = set(m_names)
+
+    for monster in e_set:
+        m_string = m_string + monster +f"({m_names.count(monster)}) "
+        
+    return m_string
+
+def encounterMarkdown(easy, medium, hard, deadly):
+
+    e_string = monsterCounter(easy)
+    m_string = monsterCounter(medium)
+    h_string = monsterCounter(hard)
+    d_string = monsterCounter(deadly)
+    
+    output = f'''##### Caldwell Castle Encounters
+| **Difficulty** | Monsters |
+|:----:|:-------------|
+| **Easy** | {e_string} |
+| **Medium** | {m_string} |
+| **Hard** | {h_string} |
+| **Deadly** | {d_string} | '''
+
+    return output
 
 if __name__ == '__main__':
     # Estimated difficulty of adventure
@@ -792,9 +835,16 @@ if __name__ == '__main__':
     #containers for output into markdown.
     monsters = {}
     npcs = {}
+    environments = ['arctic', 'coast', 'desert', 'forest', 'grassland', 'hill', 'mountain',
+    'swamp', 'underdark', 'underwater', 'urban', 'dungeon']
     encounters = {}
-    titles = {}
+    titles = []
     
+    #get the title of scenes
+    titles = getTitle(lines)
+    # for title in titles:
+        # print(title)
+
     #get the tags found in the text file.
     tags = getTags(lines)
     # print(tags)
@@ -812,106 +862,236 @@ if __name__ == '__main__':
     for x in json_1:
         entry_list.append(x['name'])
 
-    # compares dictionary entries to tags and queries for monster if not found.
-    for tag in tags:
-
-        # look for level of adventure here and 
-        if(re.match(re_level, tag) is not None):
-            adventure_level = re.findall(re_level, tag)
-            #set to the desired level.
-            adventure_level = adventure_level[0]
-            # print(adventure_level)
-            # print("Building an encounter")
-            # buildDeadlyEncounter(adventure_level, players, 'dungeon')
-
-        if(tag not in entry_list):
-            result = monsterQuery(tag)
-            if not(isinstance(result, IndexError)):
-                monsters[result['name']] = result
-                # print(f"added {result['name']}\n")
-
+    # creates an iterator in dictionary items.
     json_contents = json_lines.reader(contents)
 
+    # creates a dictionary of adventure dictionary items
+    adventure_dict = {}
+    for string in contents:
+        temp_json = json.loads(string)
+        adventure_dict[temp_json['name']] = temp_json
+        
+    for key, value in adventure_dict.items():
+        if key in adventure_dict.keys():
+            print(value['name'])
+
+
+    # compares dictionary entries to tags and queries for monster if not found.
+    # for tag in tags:
+
+    #     # look for level of adventure here and 
+    #     if(re.match(re_level, tag) is not None):
+    #         adventure_level = re.findall(re_level, tag)
+    #         #set to the desired level.
+    #         adventure_level = adventure_level[0]
+    #         # print(adventure_level)
+    #         # print("Building an encounter")
+    #         # buildDeadlyEncounter(adventure_level, players, 'dungeon')
+
+    #     if(tag not in entry_list):
+    #         result = monsterQuery(tag)
+    #         if not(isinstance(result, IndexError)):
+    #             monsters[result['name']] = result
+    #             # print(f"added {result['name']}\n")
+
     # for all the tags in the dictionary get their results from the DB.
-    for item in json_contents:
+    # for item in json_contents:
         
-        NAME = item['name'].upper()
-        # print(item['name'])
+    #     NAME = item['name'].upper()
+    #     # print(item['name'])
         
-            # if(item['name'] in tags):
-            #     print(f"{item['name']} - not found")
-            # else:
-            #     print(f"{item['name']} - Found!")
+    #         # if(item['name'] in tags):
+    #         #     print(f"{item['name']} - not found")
+    #         # else:
+    #         #     print(f"{item['name']} - Found!")
 
-        #check if it contains a type
-        if('type' in item):
-            TYPE = item['type'].upper()
-            #check if it is a Monster and modify if necessary
-            if(TYPE == 'MONSTER'):
+    #     #check if it contains a type
+    #     if('type' in item):
+    #         TYPE = item['type'].upper()
+    #         #check if it is a Monster and modify if necessary
+    #         if(TYPE == 'MONSTER'):
 
-                if(item['type'] == 'monster'):
-                    #do a query here for the monster
-                    monster = monsterQuery(item['name'])
-                    print(f"Name: {monster['name']}")
+    #             if(item['type'] == 'monster'):
+    #                 #do a query here for the monster
+    #                 monster = monsterQuery(item['name'])
+    #                 print(f"Name: {monster['name']}")
 
-                    if('CR' in item):
-                        # print("change the CR")
-                        adjustment = item['CR']
+    #                 if('CR' in item):
+    #                     # print("change the CR")
+    #                     adjustment = item['CR']
                         
 
-                        #upgrading monster
-                        if(adjustment >= 1):
-                            # print(monster['hit_points'])
-                            monster['hit_points'] = str(int(monster['hit_points']) + (10 * int(adjustment)))
-                            monster['challenge_rating'] = str(int(monster['challenge_rating'])+(int(adjustment)))
-                            monsters[monster['name']] = monster
-                            print(f"Added: {monster['name']} at CR {monster['challenge_rating']}")
-                            # print(monster['challenge_rating'])
-                            # print(monster['hit_points'])
+    #                     #upgrading monster
+    #                     if(adjustment >= 1):
+    #                         # print(monster['hit_points'])
+    #                         monster['hit_points'] = str(int(monster['hit_points']) + (10 * int(adjustment)))
+    #                         monster['challenge_rating'] = str(int(monster['challenge_rating'])+(int(adjustment)))
+    #                         monsters[monster['name']] = monster
+    #                         print(f"Added: {monster['name']} at CR {monster['challenge_rating']}")
+    #                         # print(monster['challenge_rating'])
+    #                         # print(monster['hit_points'])
                         
-                        #downgrading monster
-                        if(adjustment < 0):
-                            # print(monster['hit_points'])
-                            monster['hit_points'] = str(int(monster['hit_points']) + (10 * int(adjustment)))
-                            monster['challenge_rating'] = str(int(monster['challenge_rating'])+(int(adjustment)))
-                            monsters[monster['name']] = monster
-                            print(f"Added: {monster['name']} at CR {monster['challenge_rating']}")
+    #                     #downgrading monster
+    #                     if(adjustment < 0):
+    #                         # print(monster['hit_points'])
+    #                         monster['hit_points'] = str(int(monster['hit_points']) + (10 * int(adjustment)))
+    #                         monster['challenge_rating'] = str(int(monster['challenge_rating'])+(int(adjustment)))
+    #                         monsters[monster['name']] = monster
+    #                         print(f"Added: {monster['name']} at CR {monster['challenge_rating']}")
 
-            if (TYPE == 'NPC'):
-                print(f"{item['name']}")
-            	#get an appearance, quirk and personality for the NPC
-                npc = npcQuery()
-                npc.update({'name':item['name']})
+    #         if (TYPE == 'NPC'):
+    #             print(f"{item['name']}")
+    #         	#get an appearance, quirk and personality for the NPC
+    #             npc = npcQuery()
+    #             npc.update({'name':item['name']})
 
-                if 'description' in item.keys():
-                    npc.update({'description':item['description']})
+    #             if 'description' in item.keys():
+    #                 npc.update({'description':item['description']})
 
-                print(npc['name'])
-                npcs[npc['name']] = npc 
+    #             print(npc['name'])
+    #             npcs[npc['name']] = npc 
 
-        elif('ability' in item):
-            #TODO a query to find all monsters that have the action and name specified.
-            # print(f"{item['ability']}")
-            monster = specialAbilityQuery(item['ability'])
-            monsters[monster['name']] = monster
+    #     elif('ability' in item):
+    #         #TODO a query to find all monsters that have the action and name specified.
+    #         # print(f"{item['ability']}")
+    #         monster = specialAbilityQuery(item['ability'])
+    #         monsters[monster['name']] = monster
                     
 
-        elif('action' in item):
-            # TODO create query for actions
-            monster = actionQuery(item['action'])
-            monsters[monster['name']] = monster
+    #     elif('action' in item):
+    #         # TODO create query for actions
+    #         monster = actionQuery(item['action'])
+    #         monsters[monster['name']] = monster
     
     f= open("MARKDOWN.txt","a+")
+
+    for title in titles:
+        f.write(f'{title}\n\n')
+        # print("wrote title")
+        scene = scenes.pop(0)
+        f.write(f'{scene}\n\n')
+        # print("wrote scene")
+        for tag in tags:
+            if tag in scene:
+                # compares dictionary entries to tags and queries for monster if not found.
+                # print(tag)
+                # look for level of adventure here and 
+                if(re.match(re_level, tag) is not None):
+                    adventure_level = re.findall(re_level, tag)
+                    # print("found level")
+                    #set to the desired level.
+                    adventure_level = adventure_level[0]
+		            
+
+                if(tag not in entry_list):
+                    # print("found non-dictionary")
+                    result = monsterQuery(tag)
+                    if not(isinstance(result, IndexError)):
+                        f.write(f'{monsterMarkdown(result)}')
+                
+                #build and format encounters add monsters to total. 
+                if(tag in environments):
+                    easy = buildEasyEncounter(adventure_level, players, tag)
+                    
+                    for monster in easy:
+                        monsters[monster['name']] = monster
+
+                    medium = buildMediumEncounter(adventure_level, players, tag)
+
+                    for monster in medium:
+                        monsters[monster['name']] = monster
+
+                    hard = buildHardEncounter(adventure_level, players, tag)
+
+                    for monster in hard:
+                        monsters[monster['name']] = monster
+
+                    deadly = buildDeadlyEncounter(adventure_level, players, tag)
+
+                    for monster in deadly:
+                        monsters[monster['name']] = monster
+
+                    f.write(encounterMarkdown(easy, medium, hard, deadly))
+
+			    # for all the tags in the dictionary get their results from the DB.
+                else:
+                    for key, value in adventure_dict.items():
+                        # print(f"found {tag}")
+                        if tag == key:
+                            # print(value['name'])
+                            # break
+
+                            if('type' in value):
+                                TYPE = value['type'].upper()
+                                #check if it is a Monster and modify if necessary
+                                if(TYPE == 'MONSTER'):
+
+                                    if(value['type'] == 'monster'):
+                                        #do a query here for the monster
+                                        monster = monsterQuery(value['name'])
+                                        print(f"Name: {monster['name']}")
+
+                                        if('CR' in value):
+                                            # print("change the CR")
+                                            adjustment = value['CR']
+                                            
+
+                                            #upgrading monster
+                                            if(adjustment >= 1):
+                                                # print(monster['hit_points'])
+                                                monster['hit_points'] = str(int(monster['hit_points']) + (10 * int(adjustment)))
+                                                monster['challenge_rating'] = str(int(monster['challenge_rating'])+(int(adjustment)))
+                                                # monsters[monster['name']] = monster
+                                                print(f"Added: {monster['name']} at CR {monster['challenge_rating']}")
+                                                f.write(monsterMarkdown(monster))
+                                                # print(monster['challenge_rating'])
+                                                # print(monster['hit_points'])
+                                            
+                                            #downgrading monster
+                                            if(adjustment < 0):
+                                                # print(monster['hit_points'])
+                                                monster['hit_points'] = str(int(monster['hit_points']) + (10 * int(adjustment)))
+                                                monster['challenge_rating'] = str(int(monster['challenge_rating'])+(int(adjustment)))
+                                                # monsters[monster['name']] = monster
+                                                print(f"Added: {monster['name']} at CR {monster['challenge_rating']}")
+                                                f.write(monsterMarkdown(monster))
+
+                                if (TYPE == 'NPC'):
+                                    # print(f"{value['name']}")
+                                	#get an appearance, quirk and personality for the NPC
+                                    npc = npcQuery()
+                                    npc.update({'name':value['name']})
+
+                                    if 'description' in value.keys():
+                                        npc.update({'description':value['description']})
+
+                                    # print(npc['name'])
+                                    # npcs[npc['name']] = npc 
+                                    f.write(npcMarkdown(npc))
+
+                                elif('ability' in value):
+                                    #TODO a query to find all monsters that have the action and name specified.
+                                    # print(f"{item['ability']}")
+                                    monster = specialAbilityQuery(value['ability'])
+                                    monsters[monster['name']] = monster
+                                    f.write(monsterMarkdown(monster))
+                                            
+
+                                elif('action' in value):
+                                    # TODO create query for actions
+                                    monster = actionQuery(value['action'])
+                                    # monsters[monster['name']] = monster
+                                    f.write(monsterMarkdown(monster))
+                
+
     for key, value in monsters.items():
+        print(key)
         monsterMD = monsterMarkdown(value) 
         f.write(f"{monsterMD}")
 
-    for key, value in npcs.items():
-        # print(value)
-        npcMD = npcMarkdown(value)
-        # print(npcMD)
-        f.write(f"{npcMD}")    
-    # monsterMarkdown(value)
+    # for key, value in npcs.items():
+    #     npcMD = npcMarkdown(value)
+    #     f.write(f"{npcMD}")
 
 
 ## get rid of this stuff below here
